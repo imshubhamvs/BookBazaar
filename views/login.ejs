@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header') %>
+    <style>
+        .modal {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #ff0000;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            display: none;
+        }
+        .modal.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <!-- Modal for Notifications -->
+    <div id="notification-modal" class="modal">
+        <p id="modal-message"></p>
+    </div>
+
+    <div class="form-container">
+        <h2>Login</h2>
+        
+        <% if (error) { %>
+            <script>
+                function showModal(message) {
+                    const modal = document.getElementById('notification-modal');
+                    const modalMessage = document.getElementById('modal-message');
+                
+                    modalMessage.textContent = message;
+                    modal.classList.add('show');
+                
+                    setTimeout(() => {
+                        modal.classList.remove('show');
+                    }, 4000); // Hide after 3 seconds
+                }
+                console.log("error")
+                showModal("Invalid email or password")
+            </script>
+        <% } %>
+        <form action="/auth/login" method="POST">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/auth/register">Register here</a></p>
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+</html>

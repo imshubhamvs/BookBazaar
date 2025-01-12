@@ -1,0 +1,153 @@
+/* General Styling */
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  } */
+
+/* Container for the product page */
+.product-page {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width: 1000px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Left Side: Thumbnail Section */
+.thumbnail-section {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px; /* Fixed height for uniformity */
+}
+
+/* Right Side: Product Details */
+.product-details {
+  flex: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Title Styling */
+.product-desc-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Author Styling */
+.product-desc-author {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Price Styling */
+.product-desc-price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+/* Description Styling */
+.product-desc-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Buttons Container */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn-desc {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn-desc:hover {
+  background-color: #444;
+}
+
+/* Buy Now Button */
+.buy-now-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-now-btn:hover {
+  background-color: #e69500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-page {
+    flex-direction: column;
+  }
+
+  .thumbnail-section {
+    height: 300px;
+  }
+}
+
+/* Similar books slider */
+.similar-books-section {
+  margin-top: 50px;
+}
+
+.book-slider {
+  display: flex;
+  overflow-x: auto;
+}
+.marg-2px
+{
+    margin: 2px;
+}
+/* .product-card {
+    width: 200px;
+    border: 1px solid #ddd;
+    margin-right: 20px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-info {
+    margin-top: 10px;
+  }
+  
+  .cart-btn button {
+    margin: 5px;
+    padding: 5px 10px;
+  } */

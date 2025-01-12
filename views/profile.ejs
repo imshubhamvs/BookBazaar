@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header') %>
+   
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <div class="profile-container">
+        <div class="profile-info">
+            <div class="profile-picture">
+                <!-- Default profile picture with first letter of user's name -->
+                <div class="circle">
+                    <span><%= user.name.charAt(0).toUpperCase()%></span>
+                    
+                </div>
+            </div>
+            <div class="user-details">
+                <h2><%= user.name %></h2>
+                
+                <div class="verification-status">
+                    <p>User verified with</p>
+                    <ul>
+                        <li>Email verified:<span><%= user.email.toUpperCase() %></span></li>
+                        <li>Phone verified:<span><%= user.phone.toUpperCase() %></span></li>
+                    </ul>
+                </div>
+                <a href="/edit-profile" class="btn">Edit Profile</a>
+            </div>
+        </div>
+        <div class="profile-actions">
+            <h3>You haven’t listed anything yet</h3>
+            <p>Let go of what you don't use anymore</p>
+            <a href="/sell" class="btn">Start Selling</a>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

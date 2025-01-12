@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('partials/header.ejs') %>
+  <link rel="stylesheet" href="/css/sell_books_form.css">
+  <script src="/js/sell_books.js"></script>
+</head>
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <h1>Sell Your Book</h1>
+    <form id="sellBookForm" class="sell-form">
+      <label for="adTitle" class="sell-label">Ad Title:</label>
+      <input type="text" id="adTitle" name="adTitle" class="sell-input" required>
+  
+      <label class="sell-label">Book Details:</label>
+      <div style="display: flex; align-items:center">
+        <input type="radio" id="manual" name="bookDetails" value="manual" class="sell-input" checked>
+        <label for="manual" class="sell-label">Enter book details manually</label>
+        <br>
+        <input type="radio" id="isbn" name="bookDetails" value="isbn" class="sell-input">
+        <label for="isbn" class="sell-label">Automatically, by just typing the ISBN number</label>
+      </div>
+  
+      <div class="isbn-validation-sell">
+        <input type="text" id="isbnNumber" name="isbnNumber" class="sell-input" placeholder="Enter 13-digit ISBN number">
+        <span id="isbnValidationIcon" class="sell-validation-icon"></span>
+        <button class="sell-button">Verify</button>
+      </div>
+  
+      <label for="bookType" class="sell-label">Book Type:</label>
+      <select id="bookType" name="bookType" class="sell-select" required>
+        <option value="" disabled selected>Select book type</option>
+        <option value="fiction">Fiction</option>
+        <option value="nonfiction">Non-fiction</option>
+        <option value="educational">Educational</option>
+        <option value="other">Other</option>
+      </select>
+  
+      <label class="sell-label">Book Condition (Used):</label>
+      <div style="display: flex; align-items:center;">
+        <input type="radio" id="excellent" name="condition" value="excellent" class="sell-input" required>
+        <label for="excellent" class="sell-label">Excellent</label>
+        <input type="radio" id="good" name="condition" value="good" class="sell-input">
+        <label for="good" class="sell-label">Good</label>
+        <input type="radio" id="fair" name="condition" value="fair" class="sell-input">
+        <label for="fair" class="sell-label">Fair</label>
+      </div>
+  
+      <label for="photos" class="sell-label">Upload Photos:</label>
+      <input type="file" id="photos" name="photos" class="sell-input" accept="image/*" multiple required>
+  
+      <label for="quantity" class="sell-label">Quantity Available (Stock):</label>
+      <input type="number" id="quantity" name="quantity" class="sell-input" min="1" required>
+  
+      <label for="price" class="sell-label">Your Price (₹):</label>
+      <input type="number" id="price" name="price" class="sell-input" min="1" required>
+  
+      <button type="submit" class="sell-button">Post Ad</button>
+    </form>
+  
+    <div class="container-sell">
+      <h1>Your Payment Details</h1>
+      <form id="paymentForm" class="sell-form">
+        <div class="form-group-sell">
+          <label for="shippingCharges" class="sell-label">Your Shipping Charges to Buyer:</label>
+          <input type="text" id="shippingCharges" class="sell-input" placeholder="Enter your charges">
+          <label><input type="checkbox" id="freeShipping" class="sell-input"> Free Shipping</label>
+          <small>Buyers prefer free shipping or low shipping charges.</small>
+        </div>
+  
+        <div class="form-group-sell">
+          <label class="sell-label">Preferred Payment Mode:</label>
+          <div>
+            <label><input type="radio" name="paymentMode" value="upi" id="upiMode" class="sell-input"> UPI Number</label>
+            <label><input type="radio" name="paymentMode" value="bank" id="bankMode" class="sell-input"> Bank Account</label>
+          </div>
+        </div>
+  
+        <div id="upiDetails" class="hidd">
+          <label for="upiId" class="sell-label">Enter UPI ID:</label>
+          <input type="text" id="upiId" class="sell-input" placeholder="e.g., user@bank">
+        </div>
+  
+        <div id="bankDetails" class="hidd">
+          <label for="bankName" class="sell-label">Bank Name:</label>
+          <input type="text" id="bankName" class="sell-input" placeholder="Enter your bank name">
+          <label for="accountNumber" class="sell-label">Account Number:</label>
+          <input type="text" id="accountNumber" class="sell-input" placeholder="Enter your account number">
+          <label for="ifscCode" class="sell-label">IFSC Code:</label>
+          <input type="text" id="ifscCode" class="sell-input" placeholder="Enter your IFSC code">
+        </div>
+  
+        <div class="form-group-sell">
+          <h3>Your Details:</h3>
+          <label for="name" class="sell-label">Name:</label>
+          <input type="text" id="name" class="sell-input" placeholder="Enter your name" required>
+          <label for="email" class="sell-label">Email Address:</label>
+          <input type="email" id="email" class="sell-input" placeholder="Enter your email" required>
+          <label for="phoneNumber" class="sell-label">Phone Number (WhatsApp only):</label>
+          <input type="tel" id="phoneNumber" class="sell-input" placeholder="Enter your phone number" required>
+          <label><input type="checkbox" id="privateNumber" class="sell-input"> Keep my phone number private</label>
+        </div>
+  
+        <button type="submit" class="sell-button">Submit</button>
+      </form>
+    </div>
+
+</body>
+</html>

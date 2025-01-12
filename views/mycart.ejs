@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/header') %>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+    <div id="container" >
+      <% books.forEach(book => {const cartItem = userCart ? userCart.find(item => item.isbn === book.isbn13 && item.quantity > 0) : null; // Only find if userCart is defined
+        %>
+            <div class="product-card">
+                <a href="books/product?postId=<%= book.isbn13%>"><img src="<%= book.thumbnail %>" alt="<%= book.title %>" class="product-image" onclick="see_product(this)"></a>
+                <div class="product-info" onclick="see_product(this)">
+                    <h3 class="product-title">
+                        <%= book.title.length > 15 ? book.title.substring(0, 15) + '...' : book.title %>
+                    </h3>
+                    <p class="product-price">$<%= book.price %></p>
+                    <p class="product-date">Published: <%= book.published_year %></p>
+                    <!-- <p class="product-description"><%= book.description %></p> -->
+                </div>
+                <div class="cart-btn">
+                    <% if (cartItem) { %>
+                        <div class="cart-controls" style="display: flex;">
+                            <button onclick="decreaseQuantity(this)">-</button>
+                            <div class="quantity"><%= cartItem.quantity %></div>
+                            <button onclick="increaseQuantity(this)">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" 
+                                onclick="addToCart(this)" 
+                                data-isbn="<%= book.isbn13 %>" 
+                                style="display: none;">Add to Cart</button>
+                    <% } else { %>
+                        <div class="cart-controls" style="display: none;">
+                            <button onclick="decreaseQuantity(this)">-</button>
+                            <div class="quantity">1</div>
+                            <button onclick="increaseQuantity(this)">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" 
+                                onclick="addToCart(this)" 
+                                data-isbn="<%= book.isbn13 %>">Add to Cart</button>
+                    <% } %>
+                </div>
+            </div>
+        <% }) %>
+        
+    </div>
+  </body>
+</html>
