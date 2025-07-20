@@ -1,0 +1,76 @@
+/* Remove default margin/padding */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure navbar stretches full width */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-input {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  width: 200px;
+}
+
+.cart-button {
+  position: relative;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 2px 6px;
+}
+
+.login-button {
+  padding: 6px 12px;
+  background-color: #2980b9;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.logout-button {
+  padding: 6px 12px;
+  margin-left: 4px;
+  background-color: #2980b9;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}

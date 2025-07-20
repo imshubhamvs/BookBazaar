@@ -1,0 +1,22 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# dotenv environment variables file
+.env
+
+# Build output
+# IDEs and Editors
+.vscode/
+.idea/
+
+# Mac system files
+.DS_Store
+
+# Logs
+*.log
+
+# npm package lock file
+package-lock.json

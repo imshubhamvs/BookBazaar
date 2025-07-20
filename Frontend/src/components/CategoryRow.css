@@ -1,0 +1,16 @@
+.category-row {
+  margin-bottom: 40px;
+}
+
+.category-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}

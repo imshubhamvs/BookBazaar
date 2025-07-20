@@ -1,0 +1,36 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.auth-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.auth-toggle button {
+  padding: 6px 12px;
+  background: #ecf0f1;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.auth-toggle .active {
+  background: #3498db;
+  color: white;
+}
+
+.modal-input {
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
